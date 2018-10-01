@@ -662,6 +662,8 @@ class es extends en_gb
 		$strings['Account'] = 'Cuenta';
 		$strings['EditProfile'] = 'Editar mi perfil';
 		$strings['FindAnOpening'] = 'Encontrar un hueco';
+		$strings['FindATime'] = 'Encontrar aula disponible';
+		$strings['SearchReservations'] = 'Buscar Reservaciones';
 		$strings['OpenInvitations'] = 'Invitaciones pendientes';
 		$strings['MyCalendar'] = 'Mi calendario';
 		$strings['ResourceCalendar'] = 'Calendario de recursos';
