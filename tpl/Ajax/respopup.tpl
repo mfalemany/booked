@@ -24,12 +24,13 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
                 {if $hideUserInfo || $hideDetails}
                     {translate key=Private}
                 {else}
-                    {$fullName}
+                    Reservado por {$fullName}
                 {/if}
             </div>
         {/capture}
         {$formatter->Add('name', $smarty.capture.name)}
 
+        {*
         {capture "email"}
             <div class="email">
                 {if !$hideUserInfo && !$hideDetails}
@@ -38,7 +39,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
             </div>
         {/capture}
         {$formatter->Add('email', $smarty.capture.email)}
-
+        *}
         {capture "phone"}
             <div class="phone">
                 {if !$hideUserInfo && !$hideDetails}
@@ -59,11 +60,12 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 
         {capture "title"}
             {if !$hideDetails}
-                <div class="title">{if $title neq ''}{$title}{else}{translate key=NoTitleLabel}{/if}</div>
+                <div class="title"><b>{if $title neq ''}{$title}{else}{translate key=NoTitleLabel}{/if}</b></div>
             {/if}
         {/capture}
         {$formatter->Add('title', $smarty.capture.title)}
 
+        {*
         {capture "resources"}
             <div class="resources">
                 {translate key="Resources"} ({$resources|@count}):
@@ -75,7 +77,8 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
         {/capture}
         {$formatter->Add('resources', $smarty.capture.resources)}
 
-        {capture "participants"}
+        
+            {capture "participants"}
             {if !$hideUserInfo && !$hideDetails}
                 <div class="users">
                     {translate key="Participants"} ({$participants|@count}):
@@ -89,6 +92,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
             {/if}
         {/capture}
         {$formatter->Add('participants', $smarty.capture.participants)}
+        *}
 
         {capture "accessories"}
             {if !$hideDetails}

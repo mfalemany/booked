@@ -51,7 +51,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
             {translate key=NoDescriptionLabel}
         {/if}
         <br/>
-        <span class="bold">{translate key=Notes}</span>
+        <!-- <span class="bold">{translate key=Notes}</span>
         {if $notes neq ''}
             {$notes|html_entity_decode|url2link|nl2br}
         {else}
@@ -84,16 +84,24 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
                     {control type="AttributeControl" attribute=$attribute readonly=true}
                 </div>
             {/foreach}
-        {/if}
-        {if $ResourceTypeAttributes|count > 0}
+        {/if} -->
+        <div>
+            <span class="bold">Capacidad</span>
+            {if $maxParticipants neq ''}
+                {translate key='ResourceCapacity' args=$maxParticipants}
+            {else}
+                {translate key='ResourceCapacityNone'}
+            {/if}
+        </div>
+        <!--{if $ResourceTypeAttributes|count > 0}
             {foreach from=$ResourceTypeAttributes item=attribute}
                 <div>
                     {control type="AttributeControl" attribute=$attribute readonly=true}
                 </div>
             {/foreach}
-        {/if}
+        {/if}-->
     </div>
-    <div class="attributes {$class}">
+   <!--  <div class="attributes {$class}">
         <div>
             {if $minimumDuration neq ''}
                 {translate key='ResourceMinLength' args=$minimumDuration}
@@ -136,13 +144,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
                 {translate key='ResourceNotAllowMultiDay'}
             {/if}
         </div>
-        <div>
-            {if $maxParticipants neq ''}
-                {translate key='ResourceCapacity' args=$maxParticipants}
-            {else}
-                {translate key='ResourceCapacityNone'}
-            {/if}
-        </div>
+        
 
         {if $autoReleaseMinutes neq ''}
             <div>
@@ -163,6 +165,6 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
                 {translate key=PeakCreditUsagePerSlot args=$peakCredits}
             </div>
         {/if}
-    </div>
+    </div> -->
     <div style="clearfix">&nbsp;</div>
 </div>
